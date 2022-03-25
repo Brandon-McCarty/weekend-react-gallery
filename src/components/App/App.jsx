@@ -3,20 +3,21 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import Header from '../Header/Header';
 
 function App() {
 
-  const [gallery, setGallery] = useState([])
+  const [galleryList, setGalleryList] = useState([])
 
   const getGallery = () => {
     axios.get('/gallery')
     .then(response => {
-      setGallery(response.data);
+      setGalleryList(response.data);
       console.log(response.data);
     }).catch(err => {
       console.log(err);
     })
-  }
+  }; // End getGallery
 
   useEffect(() => {
     getGallery();
@@ -24,10 +25,10 @@ function App() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <GalleryList />
+        <Header />
+        <GalleryList 
+        galleryList={galleryList}
+        />
       </div>
     );
 }
