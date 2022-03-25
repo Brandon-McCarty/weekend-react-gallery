@@ -1,6 +1,9 @@
 import Axios from "axios";
+import {useState} from 'react'
 
 function GalleryItem ({item, getGallery}) {
+
+    const [showDescription, setShowDescription] = useState(true)
 
     const addLike = () => {
         console.log('CLICK');
@@ -15,7 +18,7 @@ function GalleryItem ({item, getGallery}) {
     }
 
     return (
-        <div>
+        <div className="container">
             <img src={item.path}/>
             <br />
             <button onClick={addLike}>I LIKEY</button>
