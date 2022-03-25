@@ -3,7 +3,7 @@ import Axios from "axios";
 function GalleryItem ({item, getGallery}) {
 
     const addLike = () => {
-        console.log('CLICK', item);
+        console.log('CLICK');
         Axios.put(`/gallery/like/${item.id}`)
         .then(response => {
             getGallery();
