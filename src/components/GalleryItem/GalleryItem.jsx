@@ -1,7 +1,16 @@
-function GalleryItem ({item}) {
+import Axios from "axios";
+
+function GalleryItem ({item, getGallery}) {
 
     const addLike = () => {
-        console.log('CLICK');
+        console.log('CLICK', item);
+        Axios.put(`/gallery/like/${item.id}`)
+        .then(response => {
+            getGallery();
+            console.log('Liked', item);
+        }).catch(err => {
+            console.log('Error in liking', err);
+        })
 
     }
 
@@ -10,7 +19,7 @@ function GalleryItem ({item}) {
             <img src={item.path}/>
             <br />
             <button onClick={addLike}>I LIKEY</button>
-            <p>AMOUNT OF LIKES HERE</p>
+            <p>{item.likes} people like this!</p>
         </div>
     )
 };

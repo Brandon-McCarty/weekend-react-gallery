@@ -28,6 +28,7 @@ function App() {
         <Header />
         <GalleryList 
         galleryList={galleryList}
+        getGallery={getGallery}
         />
       </div>
     );
