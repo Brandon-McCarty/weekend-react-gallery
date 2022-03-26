@@ -14,6 +14,47 @@
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.mimicImage {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid navy;
+  background-color: cornflowerblue;
+  block-size: 300px;
+  margin: 5px;
+  position: static;
+}
+
+body {
+  background-color: lightcyan;
+}
+
+button {
+  padding: 5px 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color:#EDBC64;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #EDBC64;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
