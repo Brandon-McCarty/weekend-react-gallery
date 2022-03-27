@@ -9,6 +9,7 @@ This project is a picture gallery created with react.js. This will display pictu
 
 
 ## Screen Shot
+<img width="1792" alt="Screen Shot 2022-03-27 at 3 35 42 PM" src="https://user-images.githubusercontent.com/96275396/160300280-26f5fcd9-9bd0-46cb-a6f0-499f7b05483f.png">
 
 
 ### Prerequisites
