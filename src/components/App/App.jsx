@@ -12,6 +12,7 @@ function App() {
   const getGallery = () => {
     axios.get('/gallery')
     .then(response => {
+      // Set galleryList as the array of data stored on the server
       setGalleryList(response.data);
       console.log(response.data);
     }).catch(err => {
@@ -19,6 +20,7 @@ function App() {
     })
   }; // End getGallery
 
+  // Run get function on load once
   useEffect(() => {
     getGallery();
   }, [])

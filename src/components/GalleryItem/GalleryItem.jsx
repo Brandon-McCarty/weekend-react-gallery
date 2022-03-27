@@ -7,6 +7,7 @@ function GalleryItem({ item, getGallery }) {
 
     const addLike = () => {
         console.log('CLICK');
+        // Increase the number of likes on the click of the button
         Axios.put(`/gallery/like/${item.id}`)
             .then(response => {
                 getGallery();
@@ -23,6 +24,7 @@ function GalleryItem({ item, getGallery }) {
     }
 
     const handleToggle = () => {
+        // Picture is shown by default
         if (showDescription === false) {
             return (
                 <>
@@ -36,11 +38,12 @@ function GalleryItem({ item, getGallery }) {
             )
         } else if (showDescription === true) {
             return (
+                // I can't figure out why the div shifts slightly when toggling to the text
+                // When the picture is clicked, switch to the description
                 <>
                     <div className="mimicImage" onClick={handleToggleStatus}>
                         <p>{item.description}</p>
                     </div>
-                    <br />
                     <button onClick={addLike}>LIKE</button>
                     <p>{item.likes} people like this!</p>
                 </>
